@@ -1,5 +1,5 @@
 /**
- * Abstract Foliage Scriptographer Tool 0.4
+ * Abstract Foliage Scriptographer Tool
  * by Oliver "gencha" Salzburg
  *
  * www.dirty-motherfucker.org
@@ -83,7 +83,7 @@ var values = {
 };
 
 function onOptions() {
-	values = Dialog.prompt('Abstract Foliage:', {
+	var returnValue = Dialog.prompt('Abstract Foliage:', {
 		branchDistance: {description: 'branchDistance'},
 		maxLifeTime: {description: 'maxLifeTime'},
 		minLifeTime: {description: 'minLifeTime'},
@@ -98,6 +98,8 @@ function onOptions() {
 		minBranchAgeToBranch: {description: 'minBranchAgeToBranch'},
 		blossomRate: {description: 'blossomRate'}
 	}, values);
+
+  if( null != returnValue ) values = returnValue;
 }
 
 
